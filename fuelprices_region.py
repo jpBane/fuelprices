@@ -35,17 +35,6 @@ if response:
     {
       "measurement": "Ortenau",
       "tags": {
-        "station_id": "00062259-1d51-4444-8888-acdc00000001",
-        "station_name": "Bft-Tankstelle Schnurr Achern"
-      },
-      "fields": {
-        "e5": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["e5"],
-        "diesel": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["e5"]
-      }
-    },
-    {
-      "measurement": "Ortenau",
-      "tags": {
         "station_id": "f9849d77-faed-4730-8755-d4db80e65d62",
         "station_name": "Marktkaufstation Offenburg"
       },
