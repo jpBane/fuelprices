@@ -13,23 +13,23 @@ if response:
     {
       "measurement": "Ortenau",
       "tags": {
+        "station_id": "00062259-1d51-4444-8888-acdc00000001",
+        "station_name": "Bft-Tankstelle Schnurr Achern"
+      },
+      "fields": {
+        "e5": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["e5"],
+        "diesel": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["diesel"]
+      }
+    },
+    {
+      "measurement": "Ortenau",
+      "tags": {
         "station_id": "b43b5fcd-17ad-4143-9002-a98cc5b50cb8",
         "station_name": "Shell Oberkirch"
       },
       "fields": {
         "e5": jsonResponse["prices"]["b43b5fcd-17ad-4143-9002-a98cc5b50cb8"]["e5"],
         "diesel": jsonResponse["prices"]["b43b5fcd-17ad-4143-9002-a98cc5b50cb8"]["diesel"]
-      }
-    },
-    {
-      "measurement": "Ortenau",
-      "tags": {
-        "station_id": "bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9",
-        "station_name": "Classic Oberkirch"
-      },
-      "fields": {
-        "e5": jsonResponse["prices"]["bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9"]["e5"],
-        "diesel": jsonResponse["prices"]["bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9"]["diesel"]
       }
     },
     {
