@@ -35,12 +35,12 @@ if response:
     {
       "measurement": "Ortenau",
       "tags": {
-        "station_id": "871828b4-37e5-419c-b7a5-cdbe1e1c0148",
-        "station_name": "Tankhof Grün - Willstätt"
+        "station_id": "00062259-1d51-4444-8888-acdc00000001",
+        "station_name": "Bft-Tankstelle Achern"
       },
       "fields": {
-        "e5": jsonResponse["prices"]["871828b4-37e5-419c-b7a5-cdbe1e1c0148"]["e5"],
-        "diesel": jsonResponse["prices"]["871828b4-37e5-419c-b7a5-cdbe1e1c0148"]["diesel"]
+        "e5": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["e5"],
+        "diesel": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["diesel"]
       }
     }
   ]
