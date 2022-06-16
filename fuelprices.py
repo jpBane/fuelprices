@@ -3,7 +3,7 @@ import requests
 from influxdb import InfluxDBClient
 
 # Define the variables
-client = InfluxDBClinet(host='localhost', port=8086, database='database_name')
+client = InfluxDBClient(host='localhost', port=8086, database='database_name')
 
 response = requests.get('https://creativecommons.tankerkoenig.de/json/list.php?lat=51&lng=9.8&rad=1&sort=dist&type=all&apikey=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx')
 
