@@ -64,8 +64,7 @@ if response:
         "e5": jsonResponse["prices"]["871828b4-37e5-419c-b7a5-cdbe1e1c0148"]["e5"],
         "diesel": jsonResponse["prices"]["871828b4-37e5-419c-b7a5-cdbe1e1c0148"]["diesel"]
       }
-    },
-
+    }
   ]
   print(json_body)
 else:
