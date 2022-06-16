@@ -5,22 +5,67 @@ from influxdb import InfluxDBClient
 # Define the variables
 client = InfluxDBClient(host='localhost', port=8086, database='fuelprices')
 
-response = requests.get("https://creativecommons.tankerkoenig.de/json/prices.php?ids=4429a7d9-fb2d-4c29-8cfe-2ca90323f9f8&apikey=00000000-0000-0000-0000-000000000002")
+response = requests.get("https://creativecommons.tankerkoenig.de/json/prices.php?ids=b43b5fcd-17ad-4143-9002-a98cc5b50cb8,bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9,00062259-1d51-4444-8888-acdc00000001,f9849d77-faed-4730-8755-d4db80e65d62,871828b4-37e5-419c-b7a5-cdbe1e1c0148&apikey=00000000-0000-0000-0000-000000000002")
 
 if response:
   jsonResponse = response.json()
   json_body = [
     {
-      "measurement": "Region",
+      "measurement": "Ortenau",
       "tags": {
-        "station_id": "insert_id_here",
-        "station_name": "insert_name_here"
+        "station_id": "b43b5fcd-17ad-4143-9002-a98cc5b50cb8",
+        "station_name": "Shell Oberkirch"
       },
       "fields": {
-        "e5": jsonResponse["prices"]["insert_id_here"]["e5"],
-        "diesel": jsonResponse["prices"]["insert_id_here"]["diesel"]
+        "e5": jsonResponse["prices"]["b43b5fcd-17ad-4143-9002-a98cc5b50cb8"]["e5"],
+        "diesel": jsonResponse["prices"]["b43b5fcd-17ad-4143-9002-a98cc5b50cb8"]["diesel"]
       }
-    }
+    },
+    {
+      "measurement": "Ortenau",
+      "tags": {
+        "station_id": "bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9",
+        "station_name": "Classic Oberkirch"
+      },
+      "fields": {
+        "e5": jsonResponse["prices"]["bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9"]["e5"],
+        "diesel": jsonResponse["prices"]["bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9"]["diesel"]
+      }
+    },
+    {
+      "measurement": "Ortenau",
+      "tags": {
+        "station_id": "00062259-1d51-4444-8888-acdc00000001",
+        "station_name": "Bft-Tankstelle Schnurr Achern"
+      },
+      "fields": {
+        "e5": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["e5"],
+        "diesel": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["e5"]
+      }
+    },
+    {
+      "measurement": "Ortenau",
+      "tags": {
+        "station_id": "f9849d77-faed-4730-8755-d4db80e65d62",
+        "station_name": "Marktkaufstation Offenburg"
+      },
+      "fields": {
+        "e5": jsonResponse["prices"]["f9849d77-faed-4730-8755-d4db80e65d62"]["e5"],
+        "diesel": jsonResponse["prices"]["f9849d77-faed-4730-8755-d4db80e65d62"]["diesel"]
+      }
+    },
+    {
+      "measurement": "Ortenau",
+      "tags": {
+        "station_id": "871828b4-37e5-419c-b7a5-cdbe1e1c0148",
+        "station_name": "Tankhof Grün - Willstätt"
+      },
+      "fields": {
+        "e5": jsonResponse["prices"]["871828b4-37e5-419c-b7a5-cdbe1e1c0148"]["e5"],
+        "diesel": jsonResponse["prices"]["871828b4-37e5-419c-b7a5-cdbe1e1c0148"]["diesel"]
+      }
+    },
+
   ]
   print(json_body)
 else:
