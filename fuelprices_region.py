@@ -7,7 +7,7 @@ client = InfluxDBClient(host='localhost', port=8086, database='fuelprices')
 
 response = requests.get("https://creativecommons.tankerkoenig.de/json/prices.php?ids=4429a7d9-fb2d-4c29-8cfe-2ca90323f9f8&apikey=00000000-0000-0000-0000-000000000002")
 
-if response
+if response:
   jsonResponse = response.json()
   json_body = [
     {
