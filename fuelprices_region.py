@@ -5,7 +5,7 @@ from influxdb import InfluxDBClient
 # Define the variables
 client = InfluxDBClient(host='localhost', port=8086, database='fuelprices')
 
-response = requests.get("https://creativecommons.tankerkoenig.de/json/prices.php?ids=b43b5fcd-17ad-4143-9002-a98cc5b50cb8,bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9,00062259-1d51-4444-8888-acdc00000001,f9849d77-faed-4730-8755-d4db80e65d62,871828b4-37e5-419c-b7a5-cdbe1e1c0148&apikey=00000000-0000-0000-0000-000000000002")
+response = requests.get("https://creativecommons.tankerkoenig.de/json/prices.php?ids=b43b5fcd-17ad-4143-9002-a98cc5b50cb8,bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9,00062259-1d51-4444-8888-acdc00000001,f9849d77-faed-4730-8755-d4db80e65d62,1f136233-03c3-475a-b796-5d30c21e6709,871828b4-37e5-419c-b7a5-cdbe1e1c0148,51d4b443-a095-1aa0-e100-80009459e03a,005056a9-779e-1eec-8fb1-9cf11c7c8e2d&apikey=00000000-0000-0000-0000-000000000002")
 
 # Try to generate the output for the InfluxDB. Return a message if this is not possible. 
 if response:
