@@ -26,6 +26,23 @@ if response:
     ]
   except:
     print("Shell Oberkirch geschlossen.")
+
+  try:
+    json_body_bf6 = [
+      {
+        "measurement": "Ortenau",
+        "tags": {
+          "station_id": "bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9",
+          "station_name": "Classic Oberkirch"
+        },
+        "fields": {
+          "e5": jsonResponse["prices"]["bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9"]["e5"],
+          "diesel": jsonResponse["prices"]["bf6b5ee4-1eec-4e6a-bac2-fdaea055a4a9"]["diesel"]
+        }
+      }
+    ]
+  except:
+    print("Classic Oberkirch geschlossen.")
     
   try:
     json_body_f98 = [
@@ -60,6 +77,23 @@ if response:
     ]
   except:
     print("Bft Achern geschlossen.")
+    
+  try:
+    json_body_871 = [
+      {
+        "measurement": "Ortenau",
+        "tags": {
+          "station_id": "871828b4-37e5-419c-b7a5-cdbe1e1c0148",
+          "station_name": "Tankhof Grün Willstätt"
+        },
+        "fields": {
+          "e5": jsonResponse["prices"]["871828b4-37e5-419c-b7a5-cdbe1e1c0148"]["e5"],
+          "diesel": jsonResponse["prices"]["871828b4-37e5-419c-b7a5-cdbe1e1c0148"]["diesel"]
+        }
+      }
+    ]
+  except:
+    print("Tankhof Grün Willstätt geschlossen.")
 
 # Return an error message if the request did not work
 else:
@@ -70,6 +104,11 @@ try:
   client.write_points(json_body_b43, time_precision='s')
 except:
   print("Daten für Shell Oberkirch nicht übertragen.")
+
+try:
+  client.write_points(json_body_bf6, time_precision='s')
+except:
+  print("Daten für Classic Oberkirch nicht übertragen.")
   
 try:
   client.write_points(json_body_f98, time_precision='s')
@@ -80,3 +119,8 @@ try:
   client.write_points(json_body_000, time_precision='s')
 except:
   print("Daten für Bft Achern nicht übertragen.")
+
+try:
+  client.write_points(json_body_871, time_precision='s')
+except:
+  print("Daten für Tankhof Grün Willstätt nicht übertragen.")
