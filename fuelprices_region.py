@@ -25,7 +25,7 @@ if response:
       }
     ]
   except:
-    print("Shell Oberkirch geschlossen.")
+    print("Shell Oberkirch ist geschlossen.")
 
   try:
     json_body_bf6 = [
@@ -42,7 +42,24 @@ if response:
       }
     ]
   except:
-    print("Classic Oberkirch geschlossen.")
+    print("Classic Oberkirch ist geschlossen.")
+
+  try:
+    json_body_000 = [
+      {
+        "measurement": "Ortenau",
+        "tags": {
+          "station_id": "00062259-1d51-4444-8888-acdc00000001",
+          "station_name": "Bft-Tankstelle Achern"
+        },
+        "fields": {
+          "e5": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["e5"],
+          "diesel": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["diesel"]
+        }
+      }
+    ]
+  except:
+    print("Bft Achern ist geschlossen.")
     
   try:
     json_body_f98 = [
@@ -59,24 +76,24 @@ if response:
       }
     ]
   except:
-    print("Marktkaufstation Offenburg geschlossen.")
+    print("Marktkaufstation Offenburg ist geschlossen.")
     
   try:
-    json_body_000 = [
+    json_body_1f1 = [
       {
         "measurement": "Ortenau",
         "tags": {
-          "station_id": "00062259-1d51-4444-8888-acdc00000001",
-          "station_name": "Bft-Tankstelle Achern"
+          "station_id": "1f136233-03c3-475a-b796-5d30c21e6709",
+          "station_name": "TotalEnergies Schutterwald"
         },
         "fields": {
-          "e5": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["e5"],
-          "diesel": jsonResponse["prices"]["00062259-1d51-4444-8888-acdc00000001"]["diesel"]
+          "e5": jsonResponse["prices"]["1f136233-03c3-475a-b796-5d30c21e6709"]["e5"],
+          "diesel": jsonResponse["prices"]["1f136233-03c3-475a-b796-5d30c21e6709"]["diesel"]
         }
       }
     ]
   except:
-    print("Bft Achern geschlossen.")
+    print("TotalEnergies Schutterwald ist geschlossen.")
     
   try:
     json_body_871 = [
@@ -93,8 +110,42 @@ if response:
       }
     ]
   except:
-    print("Tankhof Grün Willstätt geschlossen.")
+    print("Tankhof Grün Willstätt ist geschlossen.")
 
+  try:
+    json_body_51d = [
+      {
+        "measurement": "Ortenau",
+        "tags": {
+          "station_id": "51d4b443-a095-1aa0-e100-80009459e03a",
+          "station_name": "JET München Landsberger Str."
+        },
+        "fields": {
+          "e5": jsonResponse["prices"]["51d4b443-a095-1aa0-e100-80009459e03a"]["e5"],
+          "diesel": jsonResponse["prices"]["51d4b443-a095-1aa0-e100-80009459e03a"]["diesel"]
+        }
+      }
+    ]
+  except:
+    print("JET München Landsberger Str. ist geschlossen.")
+    
+  try:
+    json_body_005 = [
+      {
+        "measurement": "Ortenau",
+        "tags": {
+          "station_id": "005056a9-779e-1eec-8fb1-9cf11c7c8e2d",
+          "station_name": "Freie Tankstelle Leverkusen Alkenrath"
+        },
+        "fields": {
+          "e5": jsonResponse["prices"]["005056a9-779e-1eec-8fb1-9cf11c7c8e2d"]["e5"],
+          "diesel": jsonResponse["prices"]["005056a9-779e-1eec-8fb1-9cf11c7c8e2d"]["diesel"]
+        }
+      }
+    ]
+  except:
+    print("Freie Tankstelle Leverkusen Alkenrath ist geschlossen.")
+    
 # Return an error message if the request did not work
 else:
   print('Request returned an error.')
@@ -111,16 +162,31 @@ except:
   print("Daten für Classic Oberkirch nicht übertragen.")
   
 try:
-  client.write_points(json_body_f98, time_precision='s')
-except:
-  print("Daten für Marktkaufstation Offenburg nicht übertragen.")
-  
-try:
   client.write_points(json_body_000, time_precision='s')
 except:
   print("Daten für Bft Achern nicht übertragen.")
+  
+try:
+  client.write_points(json_body_f98, time_precision='s')
+except:
+  print("Daten für Marktkaufstation Offenburg nicht übertragen.")
 
+try:
+  client.write_points(json_body_1f1, time_precision='s')
+except:
+  print("Daten für TotalEnergies Schutterwald nicht übertragen.")
+  
 try:
   client.write_points(json_body_871, time_precision='s')
 except:
   print("Daten für Tankhof Grün Willstätt nicht übertragen.")
+
+try:
+  client.write_points(json_body_51d, time_precision='s')
+except:
+  print("Daten für JET München Landsberger Str. nicht übertragen.")
+  
+try:
+  client.write_points(json_body_005, time_precision='s')
+except:
+  print("Daten für Freie Tankstelle Leverkusen Alkenrath nicht übertragen.")
